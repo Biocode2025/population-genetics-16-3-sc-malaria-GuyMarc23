@@ -1,0 +1,21 @@
+q = 0.06
+p = 1 - q
+i=1
+
+file = open("results/Sickle_cell_freq_het.txt", "w")
+
+file.write("q"+ "\t" "\t" + "p" +  "\t""\t" + "p^2" + "\t""\t" + "2pq" + "\t""\t" + "q^2" + "\n")
+for i in range(500):
+
+ 
+ 
+    line = f"{q:.4f}\t{p:.4f}\t{q**2:.4f}\t{  2 * p * q:.4f}\t{p**2:.4f}\n"
+    file.write(line)
+
+
+    q = q / (0.98 * p + 2 * q)
+    p = (1 - q)
+
+
+
+file.close()
